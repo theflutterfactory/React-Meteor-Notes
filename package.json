@@ -1,8 +1,9 @@
 {
-  "name": "link-shortener",
+  "name": "Notes",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "test": "meteor test --driver-package=practicalmeteor:mocha"
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
@@ -18,6 +19,7 @@
     "node": "4.8.0"
   },
   "devDependencies": {
+    "expect": "^1.20.2",
     "mocha": "^3.2.0"
   }
 }
