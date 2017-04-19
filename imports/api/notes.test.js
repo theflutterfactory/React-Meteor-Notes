@@ -74,5 +74,28 @@ if (Meteor.isServer) {
         }, [noteOne._id, { title, extraKey: "Extra" }]);
       }).toThrow();
     });
+
+    it('should not update note if user is not creator', () => {
+      const title = "Updated Title";
+      Meteor.server.method_handlers['notes.update'].apply({
+        userId: "some random user"
+      }, [noteOne._id, { title }]);
+
+      const note = Notes.findOne(noteOne._id);
+
+      expect(note).toInclude(noteOne);
+    });
+
+    it('should not update note if unathenticated', () => {
+      expect(() => {
+        Meteor.server.method_handlers['notes.update'].apply({}, [noteOne._id]);
+      }).toThrow();
+    });
+
+    it('should not update note with invalid note id', () => {
+      expect(() => {
+        Meteor.server.method_handlers['notes.update'].apply({ userId: noteOne.userId });
+      }).toThrow();
+    });
   });
 }
