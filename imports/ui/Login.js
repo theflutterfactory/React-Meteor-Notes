@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router";
 import { Meteor } from "meteor/meteor";
+import { createContainer } from "meteor/react-meteor-data";
 
-export default class Login extends React.Component {
+export class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +17,7 @@ export default class Login extends React.Component {
     let email = this.refs.emailRef.value.trim();
     let password = this.refs.passwordRef.value.trim();
 
-    Meteor.loginWithPassword({ email }, password, err => {
+    this.props.loginWithPassword({ email }, password, err => {
       if (err) {
         this.setState({
           error: "Unable to Login. Please recheck your email and password"
@@ -50,3 +51,13 @@ export default class Login extends React.Component {
     );
   }
 }
+
+Login.propTypes = {
+  loginWithPassword: React.PropTypes.func.isRequired
+};
+
+export default createContainer(() => {
+  return {
+    loginWithPassword: Meteor.loginWithPassword
+  };
+}, Login);
