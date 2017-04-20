@@ -22,3 +22,4 @@ service-configuration@1.0.11
 session@1.1.7
 fourseven:scss
 practicalmeteor:mocha
+react-meteor-data
