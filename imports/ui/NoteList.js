@@ -3,15 +3,20 @@ import { Meteor } from "meteor/meteor";
 import { createContainer } from "meteor/react-meteor-data";
 import { Notes } from "../api/notes";
 import NoteListItem from './NoteListItem';
+import NoteListEmptyItem from './NoteListEmptyItem'
 
 export const NoteList = (props) => {
-  return (
-    <div>
-      {props.notes.map((note) => {
-        return <NoteListItem key={note._id} note={note} />;
-      })}
-    </div>
-  );
+  if (props.notes.length !== 0) {
+    return (
+      <div>
+        {props.notes.map((note) => {
+          return <NoteListItem key={note._id} note={note} />;
+        })}
+      </div>
+    );
+  } else {
+    return <NoteListEmptyItem />;
+  }
 };
 
 NoteList.propTypes = {
