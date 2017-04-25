@@ -51,6 +51,12 @@ export const routes = (
         component={Dashboard}
         onEnter={onEnterPrivatePage}
       />
+      <Route
+        exact
+        path="/dashboard:id"
+        component={Dashboard}
+        onEnter={onEnterPrivatePage}
+      />
       <Route path="*" component={NotFound} />
     </div>
   </Router>
