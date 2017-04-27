@@ -6,7 +6,6 @@ import { Signup } from './Signup';
 
 if (Meteor.isClient) {
   describe('Signup', () => {
-
     it('should show/hide error messages', () => {
       const error = 'Test Error msg';
       const wrapper = mount(<Signup createUser={() => { }} />);
@@ -20,9 +19,9 @@ if (Meteor.isClient) {
 
     it('should call createUser method with form data', () => {
       const email = 'julian@test.com';
-      const password = 'password123'
+      const password = 'password123';
       const spy = expect.createSpy();
-      const wrapper = mount(<Signup createUser={spy} />)
+      const wrapper = mount(<Signup createUser={spy} />);
 
       wrapper.ref('emailRef').node.value = email;
       wrapper.ref('passwordRef').node.value = password;
@@ -33,9 +32,9 @@ if (Meteor.isClient) {
 
     it('should set error with short password', () => {
       const email = 'julian@test.com';
-      const password = 'test                    '
+      const password = 'test                    ';
       const spy = expect.createSpy();
-      const wrapper = mount(<Signup createUser={spy} />)
+      const wrapper = mount(<Signup createUser={spy} />);
 
       wrapper.ref('emailRef').node.value = email;
       wrapper.ref('passwordRef').node.value = password;
@@ -45,10 +44,10 @@ if (Meteor.isClient) {
     });
 
     it('should set createUser callback errors', () => {
-      const password = 'password123'
+      const password = 'password123';
       const reason = 'Failure reason';
       const spy = expect.createSpy();
-      const wrapper = mount(<Signup createUser={spy} />)
+      const wrapper = mount(<Signup createUser={spy} />);
 
       wrapper.ref('passwordRef').node.value = password;
       wrapper.find('form').simulate('submit');

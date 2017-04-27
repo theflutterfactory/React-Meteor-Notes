@@ -26,7 +26,6 @@ if (Meteor.isClient) {
       const wrapper = mount(<NoteListItem note={notes[1]} Session={Session} />);
 
       expect(wrapper.find('h5').text()).toBe('Untitled Note');
-
     });
 
     it('should call set on click', () => {
