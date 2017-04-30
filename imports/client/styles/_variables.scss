@@ -36,6 +36,7 @@ $button-pill-color: $color-primary;
 //Header
 $header-bg: $color-primary;
 $header-color: $white;
+$header-height: 6rem;
 
 //Item
 $item-bg: $light-grey;
@@ -45,3 +46,4 @@ $item-text-color: $dark-grey;
 //Page Content
 $page-content-sidebar-width: 30rem;
 $page-content-main-width: calc( #{$site-max-width} - #{$page-content-sidebar-width} ) ;
+$page-content-height: calc(100vh - #{$header-height});

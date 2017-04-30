@@ -5,6 +5,7 @@
 
 .header--content {
   display: flex;
+  height: $header-height;
   justify-content: space-between;
   margin: 0 auto;
   max-width: $site-max-width;

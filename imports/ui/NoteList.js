@@ -10,7 +10,7 @@ import NoteListHeader from './NoteListHeader';
 export const NoteList = (props) => {
   if (props.notes.length !== 0) {
     return (
-      <div>
+      <div className='item-list'>
         <NoteListHeader />
         {props.notes.map((note) => {
           return <NoteListItem key={note._id} note={note} />;
