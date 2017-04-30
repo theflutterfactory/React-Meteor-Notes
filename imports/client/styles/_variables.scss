@@ -1,9 +1,13 @@
 //Colors
 $grey: #ddd;
 $white: #fff;
-$color-primary: #00695c;
+$color-primary: #4a148c;
 $light-grey: #f9f9f9;
 $dark-grey: #777;
+
+//Body
+$body-background-color: #fafafa;
+$body-default-color: #333;
 
 //Spacing
 $space: 1.4rem;
@@ -12,6 +16,7 @@ $site-max-width: 50rem;
 //Boxed Views
 $boxed-view-overlay-bg: $color-primary;
 $boxed-view-bg: $white;
+$boxed-view-border-color: $grey;
 
 //Fonts
 $base-font-size: 1.6rem;
