@@ -58,7 +58,7 @@ export class Editor extends React.Component {
             placeholder='Your note here'
             onChange={this.handleBodyChange.bind(this)} />
           <div>
-            <button onClick={this.deleteNote.bind(this)}>Delete Note</button>
+            <button className='button button-secondary' onClick={this.deleteNote.bind(this)}>Delete Note</button>
           </div>
         </div>
       );
@@ -67,7 +67,7 @@ export class Editor extends React.Component {
     } else {
       return (
         <div className='editor'>
-          <p>
+          <p className='editor--message'>
             {this.props.selectedNoteId ? ' Note not found.' : 'Pick or create a note to get started'}
           </p>
         </div>
