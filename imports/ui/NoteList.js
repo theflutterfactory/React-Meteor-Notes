@@ -5,19 +5,18 @@ import { Notes } from '../api/notes';
 import { Session } from 'meteor/session';
 import NoteListItem from './NoteListItem';
 import NoteListEmptyItem from './NoteListEmptyItem';
+import NoteListHeader from './NoteListHeader';
 
 export const NoteList = (props) => {
-  if (props.notes.length !== 0) {
-    return (
-      <div className='item-list'>
-        {props.notes.map((note) => {
-          return <NoteListItem key={note._id} note={note} />;
-        })}
-      </div>
-    );
-  } else {
-    return <NoteListEmptyItem />;
-  }
+  return (
+    <div className='item-list'>
+      <NoteListHeader />
+      {props.notes.length === 0 ? <NoteListEmptyItem /> : undefined}
+      {props.notes.map((note) => {
+        return <NoteListItem key={note._id} note={note} />;
+      })}
+    </div>
+  );
 };
 
 NoteList.propTypes = {
