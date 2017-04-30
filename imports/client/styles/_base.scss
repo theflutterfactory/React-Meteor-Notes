@@ -11,7 +11,7 @@ html {
 body {
   background-color: $body-background-color;
   color: $body-default-color;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: $body-default-font-family;
   font-size: $base-font-size;
 }
 
@@ -33,11 +33,22 @@ a {
   color: $body-default-color;
 }
 
+textarea {
+  border: 1px solid $input-border;
+  color: $body-default-color;
+  font-family: $body-default-font-family;
+  font-size: $base-font-size;
+  margin-bottom: $space;
+  padding: $input-spacing;
+}
+
 input {
   &[type='text'],
   &[type='email'],
   &[type='password'] {
     border: 1px solid $input-border;
+    color: $body-default-color;
+    font-family: $body-default-font-family;
     font-size: $base-font-size;
     margin-bottom: $space;
     padding: $input-spacing;
