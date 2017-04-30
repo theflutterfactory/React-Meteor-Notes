@@ -11,7 +11,7 @@ $body-default-color: #333;
 
 //Spacing
 $space: 1.4rem;
-$site-max-width: 50rem;
+$site-max-width: 100rem;
 
 //Boxed Views
 $boxed-view-overlay-bg: $color-primary;
@@ -41,3 +41,7 @@ $header-color: $white;
 $item-bg: $light-grey;
 $item-border: darken($item-bg, 8%);
 $item-text-color: $dark-grey;
+
+//Page Content
+$page-content-sidebar-width: 30rem;
+$page-content-main-width: calc( #{$site-max-width} - #{$page-content-sidebar-width} ) ;
