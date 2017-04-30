@@ -8,6 +8,7 @@
 
 .page-content--sidebar {
   display: flex;
+  flex-direction: column;
   padding-right: $large-space;
   width: $page-content-sidebar-width;
 }
