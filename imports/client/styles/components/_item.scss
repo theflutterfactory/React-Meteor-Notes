@@ -23,6 +23,12 @@
   border-left: $item-border-width solid $color-highlight;
 }
 
+.item--selected,
+.item--selected:hover {
+  background-color: $light-grey;
+  border-left: $item-border-width solid $color-primary;
+}
+
 .item--message {
   color: $dark-grey;
 }
