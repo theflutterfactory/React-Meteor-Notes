@@ -8,22 +8,27 @@
 .item-list--header {
   display: flex;
   flex-direction: column;
-  padding: $input-spacing;
-}
-
-.item {
-  background: $item-bg;
-  border: 1px solid $item-border;
-  margin-bottom: $space;
   padding: $space;
 }
 
+.item {
+  border-left: $item-border-width solid transparent;
+  cursor: pointer;
+  padding: $space;
+  transition: background-color .3s ease, border-left .3s ease;
+}
+
+.item:hover {
+  background-color: $light-grey;
+  border-left: $item-border-width solid $color-highlight;
+}
+
 .item--message {
-  color: $item-text-color;
+  color: $dark-grey;
 }
 
 .item--status-message {
-  color: $item-text-color;
+  color: $dark-grey;
   font-style: italic;
   margin: 0;
   text-align: center;

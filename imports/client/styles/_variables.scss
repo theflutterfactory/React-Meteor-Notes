@@ -2,6 +2,7 @@
 $grey: #ddd;
 $white: #fff;
 $color-primary: #4a148c;
+$color-highlight: #e1bee7;
 $light-grey: #f9f9f9;
 $dark-grey: #777;
 
@@ -41,9 +42,7 @@ $header-color: $white;
 $header-height: 6rem;
 
 //Item
-$item-bg: $light-grey;
-$item-border: darken($item-bg, 8%);
-$item-text-color: $dark-grey;
+$item-border-width: 4px;
 
 //Page Content
 $page-content-sidebar-width: 30rem;
