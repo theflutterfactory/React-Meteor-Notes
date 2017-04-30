@@ -29,8 +29,23 @@
   border-left: $item-border-width solid $color-primary;
 }
 
+.item--title {
+  font-weight: normal;
+  font-size: $base-font-size;
+  margin-bottom: .4rem;
+}
+
+.item--selected .item--title {
+  font-weight: bold;
+}
+
+.item--subtitle {
+  color: $dark-grey;
+}
+
 .item--message {
   color: $dark-grey;
+  margin: 0;
 }
 
 .item--status-message {
