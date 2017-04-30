@@ -5,6 +5,12 @@
   width: 100%;
 }
 
+.item-list--header {
+  display: flex;
+  flex-direction: column;
+  padding: $input-spacing;
+}
+
 .item {
   background: $item-bg;
   border: 1px solid $item-border;
@@ -20,5 +26,11 @@
   color: $item-text-color;
   font-style: italic;
   margin: 0;
+  text-align: center;
+}
+
+.empty-item {
+  font-style: italic;
+  padding: $input-spacing;
   text-align: center;
 }

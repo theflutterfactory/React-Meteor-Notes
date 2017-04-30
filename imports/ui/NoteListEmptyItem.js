@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 const NoteListEmptyItem = () => {
   return (
-    <h1>No Saved Notes Found</h1>
+    <p className='empty-item'>Create a note to get started.</p>
   );
 };
 
