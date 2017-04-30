@@ -1,30 +1,27 @@
 .page-content {
+  @include desktop {
+    padding: $large-space $space;
+  }
   display: flex;
   height: $page-content-height;
   margin: 0 auto;
   max-width: $site-max-width;
-
-  @media (min-width: 50rem) {
-    padding: $large-space $space;
-  }
 }
 
 .page-content--sidebar {
+  @include desktop {
+    display: flex;
+  }
   display: none;
   flex-direction: column;
   padding-right: $large-space;
   width: $page-content-sidebar-width;
-
-  @media (min-width: 50rem) {
-    display: flex;
-  }
 }
 
 .page-content--main {
-  display: flex;
-  width: 100%;
-
-  @media (min-width: 50rem) {
+  @include desktop {
     width: $page-content-main-width;
   }
+  display: flex;
+  width: 100%;
 }
