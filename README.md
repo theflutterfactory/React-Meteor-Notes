@@ -1,8 +1,20 @@
-# Project
+# Schwifty Notes
 
 ## Feature Highlights
+- Signup/Login securely to view your own notes
+- Create, Update, and Delete Notes in real time
+- Responsive design with a 2 pane web layout and drawer layout for mobile browsers
+- Most recently edited notes are always pushed to the top of the list
+
 
 ## Installation
+1. Clone the repo.
+2. Install Meteor
+3. Install dependencies: `meteor npm install`
+4. Run the app: `meteor run`
+
+## Running the tests
+- 'meteor npm test' to view test output in browser
 
 ## Contributing
 
@@ -13,7 +25,7 @@
 5. Submit a pull request
 
 ## Credits
-
+Thanks to Andrew Mead and his Udemy React course for teaching React and Mongo in a fun and inspirational manner.
 
 ## License
 
@@ -38,3 +50,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
