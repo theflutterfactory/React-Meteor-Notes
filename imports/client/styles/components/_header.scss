@@ -4,6 +4,7 @@
 }
 
 .header--content {
+  align-items: center;
   display: flex;
   height: $header-height;
   justify-content: space-between;
@@ -14,4 +15,13 @@
 
 .header--title {
   margin: 0;
+}
+
+.header--nav-toggle {
+  @include desktop {
+    display: none;
+  }
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
 }

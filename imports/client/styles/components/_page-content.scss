@@ -12,6 +12,7 @@
   @include desktop {
     display: flex;
     padding-right: $large-space;
+    position: static;
     width: $page-content-sidebar-width;
   }
   bottom: 0;
