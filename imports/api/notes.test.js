@@ -1,17 +1,16 @@
-import { Meteor } from "meteor/meteor";
+import { Meteor } from 'meteor/meteor';
 import expect from 'expect';
 import { Notes } from './notes';
 
 if (Meteor.isServer) {
   describe('notes', function () {
-
     const noteOne = {
       _id: 'testNoteId',
       title: 'testTitle',
       body: 'testBody',
       updatedAt: 0,
       userId: 'testUserId'
-    }
+    };
 
     const noteTwo = {
       _id: 'testNoteId2',
@@ -19,7 +18,7 @@ if (Meteor.isServer) {
       body: 'Table',
       updatedAt: 0,
       userId: 'testUserId2'
-    }
+    };
 
     beforeEach(() => {
       Notes.remove({});
@@ -60,7 +59,7 @@ if (Meteor.isServer) {
     });
 
     it('should update note', () => {
-      const title = "Updated Title";
+      const title = 'Updated Title';
       Meteor.server.method_handlers['notes.update'].apply({
         userId: noteOne.userId
       }, [noteOne._id, { title }]);
@@ -75,19 +74,19 @@ if (Meteor.isServer) {
     });
 
     it('should throw error if note updates with unexpected extras', () => {
-      const title = "Updated Title";
+      const title = 'Updated Title';
 
       expect(() => {
         Meteor.server.method_handlers['notes.update'].apply({
-          userId: "noteOne.userId"
-        }, [noteOne._id, { title, extraKey: "Extra" }]);
+          userId: 'noteOne.userId'
+        }, [noteOne._id, { title, extraKey: 'Extra' }]);
       }).toThrow();
     });
 
     it('should not update note if user is not creator', () => {
-      const title = "Updated Title";
+      const title = 'Updated Title';
       Meteor.server.method_handlers['notes.update'].apply({
-        userId: "some random user"
+        userId: 'some random user'
       }, [noteOne._id, { title }]);
 
       const note = Notes.findOne(noteOne._id);
@@ -116,7 +115,7 @@ if (Meteor.isServer) {
     });
 
     it('should return 0 notes for user without any notes', function () {
-      const result = Meteor.server.publish_handlers.notes.apply({ userId: "randomId" });
+      const result = Meteor.server.publish_handlers.notes.apply({ userId: 'randomId' });
       const notes = result.fetch();
 
       expect(notes.length).toBe(0);

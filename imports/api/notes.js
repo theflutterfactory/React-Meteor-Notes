@@ -1,18 +1,18 @@
-import { Mongo } from "meteor/mongo";
-import { Meteor } from "meteor/meteor";
-import moment from "moment";
-import SimpleSchema from "simpl-schema";
+import { Mongo } from 'meteor/mongo';
+import { Meteor } from 'meteor/meteor';
+import moment from 'moment';
+import SimpleSchema from 'simpl-schema';
 
 export const Notes = new Mongo.Collection('notes');
 
 if (Meteor.isServer) {
   Meteor.publish('notes', function () {
     return Notes.find({ userId: this.userId });
-  })
+  });
 }
 
 Meteor.methods({
-  'notes.insert'() {
+  'notes.insert' () {
     if (!this.userId) {
       throw new Meteor.Error('not-authorized');
     }
@@ -22,9 +22,9 @@ Meteor.methods({
       body: '',
       userId: this.userId,
       updatedAt: moment().valueOf()
-    })
+    });
   },
-  'notes.remove'(_id) {
+  'notes.remove' (_id) {
     if (!this.userId) {
       throw new Meteor.Error('not-authorized');
     }
@@ -36,10 +36,10 @@ Meteor.methods({
       }
     }).validate({ _id });
 
-    //The 2nd paramter insures that a user can't delete someone else's notes
+    // The 2nd paramter insures that a user can't delete someone else's notes
     Notes.remove({ _id, userId: this.userId });
   },
-  'notes.update'(_id, updates) {
+  'notes.update' (_id, updates) {
     if (!this.userId) {
       throw new Meteor.Error('not-authorized');
     }
@@ -65,11 +65,14 @@ Meteor.methods({
     Notes.update({
       _id,
       userId: this.userId
-    }, {
-        $set: {
+    },
+      {
+        $set:
+        {
           updatedAt: moment().valueOf(),
           ...updates
         }
-      });
+      }
+    );
   }
 });

@@ -1,5 +1,5 @@
 import expect from 'expect';
-import { Meteor } from "meteor/meteor";
+import { Meteor } from 'meteor/meteor';
 import { validateNewUser } from '../../imports/api/users';
 
 if (Meteor.isServer) {

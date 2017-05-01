@@ -1,17 +1,17 @@
-import React from "react";
-import { Link } from "react-router";
-import { Accounts } from "meteor/accounts-base";
-import { createContainer } from "meteor/react-meteor-data";
+import React from 'react';
+import { Link } from 'react-router';
+import { Accounts } from 'meteor/accounts-base';
+import { createContainer } from 'meteor/react-meteor-data';
 
 export class Signup extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
-      error: ""
+      error: ''
     };
   }
 
-  onSubmit(e) {
+  onSubmit (e) {
     e.preventDefault();
 
     let email = this.refs.emailRef.value.trim();
@@ -19,7 +19,7 @@ export class Signup extends React.Component {
 
     if (password.length < 9) {
       return this.setState({
-        error: "Password must be at least 9 characters long."
+        error: 'Password must be at least 9 characters long.'
       });
     }
 
@@ -27,29 +27,29 @@ export class Signup extends React.Component {
       if (err) {
         this.setState({ error: err.reason });
       } else {
-        this.setState({ error: "" });
+        this.setState({ error: '' });
       }
     });
   }
 
-  render() {
+  render () {
     return (
-      <div className="boxed-view">
-        <div className="boxed-view--box" >
+      <div className='boxed-view'>
+        <div className='boxed-view--box' >
           <h1>Join</h1>
           {this.state.error ? <p>{this.state.error}</p> : undefined}
 
-          <form onSubmit={this.onSubmit.bind(this)} noValidate className="boxed-view--form">
-            <input type="email" ref="emailRef" name="email" placeholder="Email" />
+          <form onSubmit={this.onSubmit.bind(this)} noValidate className='boxed-view--form'>
+            <input type='email' ref='emailRef' name='email' placeholder='Email' />
             <input
-              type="password"
-              ref="passwordRef"
-              name="password"
-              placeholder="Password"
+              type='password'
+              ref='passwordRef'
+              name='password'
+              placeholder='Password'
             />
-            <button className="button hvr-grow">Create Account</button>
+            <button className='button hvr-grow'>Create Account</button>
           </form>
-          <Link to="/">Have an account?</Link>
+          <Link to='/'>Have an account?</Link>
         </div>
       </div>
     );
