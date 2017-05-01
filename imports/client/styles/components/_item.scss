@@ -1,5 +1,6 @@
 .item-list {
-  background-color: white;
+  -webkit-overflow-scrolling: touch;
+  background-color: $white;
   border: 1px solid $grey;
   overflow-y: scroll;
   width: 100%;

@@ -22,6 +22,7 @@
   top: $header-height;
   transition: left .3s ease;
   width: 100vw;
+  z-index: 1;
 }
 
 .is-nav-open {

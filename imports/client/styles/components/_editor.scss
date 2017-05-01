@@ -17,6 +17,7 @@
 }
 
 .editor--body {
+  -webkit-overflow-scrolling: touch;
   flex-grow: 1;
   font-weight: 300;
   margin-bottom: $large-space;
