@@ -11,11 +11,22 @@
 .page-content--sidebar {
   @include desktop {
     display: flex;
+    padding-right: $large-space;
+    width: $page-content-sidebar-width;
   }
-  display: none;
-  flex-direction: column;
-  padding-right: $large-space;
-  width: $page-content-sidebar-width;
+  bottom: 0;
+  display: flex;
+  left: -100vw;
+  position: fixed;
+  top: $header-height;
+  transition: left .3s ease;
+  width: 100vw;
+}
+
+.is-nav-open {
+  .page-content--sidebar {
+    left: 0;
+  }
 }
 
 .page-content--main {
