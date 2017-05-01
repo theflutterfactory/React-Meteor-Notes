@@ -1,5 +1,5 @@
 {
-  "name": "Notes",
+  "name": "Schwifty Notes",
   "private": true,
   "scripts": {
     "start": "meteor run",
