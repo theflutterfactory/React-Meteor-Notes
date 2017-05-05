@@ -1,5 +1,5 @@
 .editor {
-  background-color: white;
+  background-color: $white;
   border: 1px solid $grey;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
 }
 
 .editor--title {
-  border: none;
+  border: 0;
   border-bottom: 2px solid $grey;
   font-size: $large-font-size;
   margin-bottom: $large-space;
@@ -17,7 +17,6 @@
 }
 
 .editor--body {
-  -webkit-overflow-scrolling: touch;
   flex-grow: 1;
   font-weight: 300;
   margin-bottom: $large-space;
@@ -27,7 +26,7 @@
 }
 
 .editor--message {
-  text-align: center;
-  margin: $large-space;
   font-style: italic;
+  margin: $large-space;
+  text-align: center;
 }
