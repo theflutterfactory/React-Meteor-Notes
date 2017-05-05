@@ -30,22 +30,28 @@ export class Login extends React.Component {
 
   render () {
     return (
-      <div className='boxed-view'>
-        <div className='boxed-view--box' >
-          <h1>Login</h1>
-          {this.state.error ? <p>{this.state.error}</p> : undefined}
-
-          <form onSubmit={this.onSubmit.bind(this)} noValidate className='boxed-view--form'>
-            <input type='email' ref='emailRef' name='email' placeholder='Email' />
-            <input
-              type='password'
-              ref='passwordRef'
-              name='password'
-              placeholder='Password'
-            />
-            <button className='button hvr-grow'>Login</button>
-          </form>
-          <Link to='/signup'>Don't have an account? Signup</Link>
+      <div>
+        <div className='header--name'>
+          <h1 >Schwifty Notes</h1>
+          <h1 className='header--name-sub'>Julian Currie</h1>
+          <p>&#8675;</p>
+        </div>
+        <div className='boxed-view'>
+          <div className='boxed-view--box' >
+            <h1>Login</h1>
+            {this.state.error ? <p>{this.state.error}</p> : undefined}
+            <form onSubmit={this.onSubmit.bind(this)} noValidate className='boxed-view--form'>
+              <input type='email' ref='emailRef' name='email' placeholder='Email' />
+              <input
+                type='password'
+                ref='passwordRef'
+                name='password'
+                placeholder='Password'
+              />
+              <button className='button hvr-grow'>Login</button>
+            </form>
+            <Link to='/signup'>Don't have an account? Signup</Link>
+          </div>
         </div>
       </div>
     );

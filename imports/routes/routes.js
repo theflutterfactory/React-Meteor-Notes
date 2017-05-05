@@ -38,15 +38,13 @@ export const globalOnEnter = (nextState) => {
 
 export const routes = (
   <Router history={browserHistory}>
-    <div>
-      <Route onEnter={globalOnEnter} onChange={globalOnChange}>
-        <Route exact path='/' component={Login} privacy='unauth' />
-        <Route exact path='/signup' component={Signup} privacy='unauth' />
-        <Route exact path='/dashboard' component={Dashboard} privacy='auth' />
-        <Route exact path='/dashboard/:id' component={Dashboard} privacy='auth'
-          onEnter={onEnterNotePage} onLeave={onLeaveNotePage} />
-        <Route path='*' component={NotFound} />
-      </Route>
-    </div>
+    <Route onEnter={globalOnEnter} onChange={globalOnChange}>
+      <Route exact path='/' component={Login} privacy='unauth' />
+      <Route exact path='/signup' component={Signup} privacy='unauth' />
+      <Route exact path='/dashboard' component={Dashboard} privacy='auth' />
+      <Route exact path='/dashboard/:id' component={Dashboard} privacy='auth'
+        onEnter={onEnterNotePage} onLeave={onLeaveNotePage} />
+      <Route path='*' component={NotFound} />
+    </Route>
   </Router>
 );
