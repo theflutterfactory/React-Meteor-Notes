@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
+import smoothScroll from 'smoothscroll';
 
 export class Login extends React.Component {
   constructor (props) {
@@ -28,13 +29,19 @@ export class Login extends React.Component {
     });
   }
 
+  scrollToBottom (e) {
+    e.preventDefault();
+    var exampleDestination = document.querySelector('button');
+    smoothScroll(exampleDestination, 1000);
+  }
+
   render () {
     return (
       <div>
         <div className='header--name'>
           <h1 >Schwifty Notes</h1>
           <h1 className='header--name-sub'>Julian Currie</h1>
-          <p>&#8675;</p>
+          <p onClick={this.scrollToBottom.bind(this)}>&#8675;</p>
         </div>
         <div className='boxed-view'>
           <div className='boxed-view--box' >
