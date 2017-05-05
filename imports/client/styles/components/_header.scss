@@ -31,14 +31,21 @@
 
 .header--name-sub {
   @include desktop {
-    font-size: $main-title-size;
+    font-size: $main_subtitle-size;
   }
   align-items: center;
   border-top: 2px solid $grey;
   display: flex;
-  font-size: 2rem;
+  font-size: $large-font-size;
   justify-content: center;
   padding-top: 4rem;
+}
+
+.header--arrow {
+  @include desktop {
+    font-size: $main-title-size;
+  }
+  font-size: 4rem;
 }
 
 .header--title {

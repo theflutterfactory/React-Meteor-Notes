@@ -41,7 +41,7 @@ export class Login extends React.Component {
         <div className='header--name'>
           <h1 >Schwifty Notes</h1>
           <h1 className='header--name-sub'>Julian Currie</h1>
-          <p onClick={this.scrollToBottom.bind(this)}>&#8675;</p>
+          <p className='header--arrow' onClick={this.scrollToBottom.bind(this)}>&#8675;</p>
         </div>
         <div className='boxed-view'>
           <div className='boxed-view--box' >
